@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://eiuyj7tr4gho"]
+
+[ext_resource type="MeshLibrary" uid="uid://b66j80a7cfisw" path="res://tiles.tres" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://dch33ta82w2cx" path="res://player.tscn" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://ba6y8kmso6sac" path="res://ball.gd" id="3_feb5d"]
+
+[node name="Game" type="Node3D" unique_id=1957996058]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=114896042]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=736463063]
+mesh_library = ExtResource("1_80nbo")
+cell_size = Vector3(0.5, 0.5, 0.5)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(0, 0, 3, 65534, 0, 16, 0, 65528, 16, 65534, 9, 23, 0, 65527, 655380, 2, 65527, 22, 65534, 65527, 1441814, 0, 65525, 655379, 65534, 65525, 655382, 2, 65525, 1048595, 2, 65523, 40, 2, 65521, 40, 2, 65522, 40, 2, 65519, 40, 2, 65520, 40, 2, 65517, 40, 2, 65518, 40, 2, 65509, 16, 2, 65514, 29, 2, 65502, 16)
+}
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=739870233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 1)
+
+[node name="Ball" parent="." unique_id=722789565 instance=ExtResource("2_e2o6t")]
+script = ExtResource("3_feb5d")
